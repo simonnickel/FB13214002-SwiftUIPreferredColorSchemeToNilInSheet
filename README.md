@@ -31,12 +31,15 @@ Device: Any iPhone Simulator.
 
 ## Workaround
 
-Set the environments colorScheme explicitly as preferredColorScheme
+Set the preferredColorScheme inside of the sheet with the colorScheme form the Environments from outside of the sheet. 
 
 ```
 	@Environment(\.colorScheme) private var colorScheme
+	
+	view.sheet {
+		view.preferredColorScheme(isDark ? .dark : colorScheme)
+	}
 
-	view.preferredColorScheme(isDark ? .dark : colorScheme)
 ```
  
 
